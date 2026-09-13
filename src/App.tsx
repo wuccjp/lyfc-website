@@ -58,7 +58,7 @@ function Hero() {
           <div>
             <p className="text-teal-700 font-bold tracking-[0.2em] text-xs sm:text-sm">FAMILY MEDICINE · KAOHSIUNG LINGYA</p>
             <h1 className="mt-3 font-serif text-[32px] sm:text-[48px] leading-[1.1] font-semibold text-slate-900">
-              醫術承諾，<br/><span className="text-teal-800">仁心為您</span>
+              醫術承諾，<span className="text-teal-800">仁心為您</span>
             </h1>
             <p className="mt-4 text-slate-600 leading-relaxed max-w-[560px] text-[15px] sm:text-[16px]">
               劉永豐診所深耕高雄苓雅，以家庭醫學為核心，提供細緻、連續性的基層照護。<br className="hidden sm:block"/>
