@@ -343,12 +343,15 @@ function Doctor() {
   return (
     <section id="doctor" className="mx-auto max-w-[1120px] px-4 sm:px-6 py-10 sm:py-14">
       <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-8 items-start">
-        <div className="rounded-2xl overflow-hidden bg-slate-100 aspect-[4/4.8] relative">
-          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80&auto=format&fit=crop" alt="劉永豐醫師" className="w-full h-full object-cover" />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/80 to-transparent p-5">
-            <div className="text-white font-serif text-xl font-semibold">劉永豐 醫師</div>
-            <div className="text-teal-100 text-xs tracking-widest">LIU YUNG-FENG, M.D.</div>
+        <div>
+          <div className="rounded-2xl overflow-hidden bg-slate-100 relative">
+            <img src={`${import.meta.env.BASE_URL}doctor-award.jpg`} alt="劉永豐醫師榮獲2018年度台灣醫療典範獎頒獎合影" className="w-full object-cover" loading="lazy" />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/80 to-transparent p-5">
+              <div className="text-white font-serif text-xl font-semibold">劉永豐 醫師</div>
+              <div className="text-teal-100 text-xs tracking-widest">LIU YUNG-FENG, M.D.</div>
+            </div>
           </div>
+          <p className="mt-2 text-[11px] leading-relaxed text-slate-400">2018年度【台灣醫療典範獎】頒獎典禮（左：陳時中部長　中：劉永豐醫師　右：邱泰源理事長）</p>
         </div>
         <div>
           <p className="text-xs font-bold tracking-[0.18em] text-teal-700">ABOUT DOCTOR</p>
@@ -357,16 +360,12 @@ function Doctor() {
             劉永豐醫師長期投入基層醫療，重視醫病溝通與連續性照護，關懷長者與家庭健康，並積極推動預立醫療與病人自主。
           </p>
 
-          <div className="mt-6 grid gap-3">
-            <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 flex gap-3">
-              <span className="text-lg">🏅</span>
-              <div><div className="text-sm font-bold text-amber-900">2018 台灣醫療典範獎</div><div className="text-xs text-amber-800/80">肯定長期在基層醫療與社區貢獻</div></div>
-            </div>
-            <div className="rounded-xl border border-slate-200 bg-white px-4 py-3 flex gap-3">
-              <span className="text-lg">🎓</span>
-              <div><div className="text-sm font-bold text-slate-900">2021 鳳山高中第20屆傑出校友</div><div className="text-xs text-slate-600">回饋母校、服務鄉里之肯定</div></div>
-            </div>
-          </div>
+          <h3 className="mt-6 font-bold text-slate-900">簡歷</h3>
+          <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-slate-600">
+            <li className="flex gap-2"><span className="text-teal-700 font-bold">▸</span><span>民國 51 年生於台灣高雄</span></li>
+            <li className="flex gap-2"><span className="text-teal-700 font-bold">▸</span><span>民國 77 年國防醫學院醫學系畢業</span></li>
+            <li className="flex gap-2"><span className="text-teal-700 font-bold">▸</span><span>民國 87 年第五屆高雄縣榮譽縣民</span></li>
+          </ul>
 
           <blockquote className="mt-6 border-l-4 border-teal-700 pl-4 text-sm leading-relaxed text-slate-700 italic">
             「醫術是承諾，仁心是日常。把每一次看診當作與家庭的長期合作。」
@@ -376,6 +375,63 @@ function Doctor() {
             <a href="#acp" className="rounded-full bg-teal-800 px-5 py-2.5 text-sm font-bold text-white">預約諮商</a>
             <a href="#access" className="rounded-full border border-slate-200 px-5 py-2.5 text-sm font-bold text-slate-800">查看交通</a>
           </div>
+        </div>
+      </div>
+
+      <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-6 sm:p-7">
+        <div className="flex items-center gap-2">
+          <span className="text-lg">🏅</span>
+          <h3 className="font-bold text-amber-900">劉永豐醫師榮獲 2018 年度【台灣醫療典範獎】</h3>
+        </div>
+        <h4 className="mt-5 text-sm font-bold text-slate-900">推薦理由及傑出貢獻事蹟</h4>
+        <ul className="mt-3 grid md:grid-cols-2 gap-2">
+          {[
+            '承辦國防醫學院全校愛心認養活動，認養台北真光育幼院約 50 名孤兒，協助其經費不足與陪伴孤兒，同時策畫偏鄉義診服務隊，後發展為國防醫學院海外服務隊。',
+            '參加高雄佛光山雲水醫院，提供偏鄉地區的義診，同時參加慈濟國際人醫會，於山區與偏遠地區義診。',
+            '創立義診團，於高雄、屏東、台南山區及全國偏遠地區，結合中醫與相關慈善團體，進行中西醫義診、義剪、慈善濟貧發放等活動。',
+            '921 地震時，於埔里成立醫療站，進行義診及協助物資發放。',
+            '遠赴印度南部從事義診，於印度各醫療貧乏區域，建設醫院、引進醫療設備，提升醫療環境，回國後廣邀各方力量成立醫療基金，定期提供醫療相關資源。',
+            '88 水災時，於屏東成立災民收容中心，於台東縣偏鄉地區設立醫療站，進行義診及物資發放。',
+            '高雄氣爆事件，協助設立醫療站及服務台，進行義診及物資發放。',
+            '於中國西藏、青海等地進行義診並提供醫療相關服務。',
+            '尼泊爾大地震時提供募集物資等相關協助。',
+          ].map((t, i)=>(
+            <li key={i} className="flex gap-2 rounded-xl bg-white border border-amber-100 px-4 py-3 text-xs leading-relaxed text-slate-700"><span className="font-extrabold text-amber-600 shrink-0">{i+1}</span><span>{t}</span></li>
+          ))}
+        </ul>
+        <p className="mt-3 text-[11px] text-amber-800/70">資料來源：<a href="https://www.tma.tw/med_paragon/index_Info.asp?/137.html" target="_blank" className="underline underline-offset-2">中華民國醫師公會全國聯合會</a></p>
+      </div>
+
+      <div className="mt-6 grid lg:grid-cols-[0.85fr_1.15fr] gap-8 items-start rounded-2xl border border-slate-200 bg-white p-6 sm:p-7">
+        <div>
+          <img src={`${import.meta.env.BASE_URL}doctor-alumni.png`} alt="劉永豐醫師榮獲2021年鳳山高中第20屆傑出校友名錄" className="w-full rounded-xl border border-slate-200" loading="lazy" />
+        </div>
+        <div>
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🎓</span>
+            <h3 className="font-bold text-slate-900">劉永豐醫師榮獲鳳山高中第 20 屆傑出校友（2021 年）</h3>
+          </div>
+          <div className="mt-4 text-sm leading-relaxed text-slate-600 space-y-1.5">
+            <p><b className="text-slate-900">學籍：</b>高中部 69 年畢業</p>
+            <p><b className="text-slate-900">學歷：</b>國防醫學院醫學系、國立高雄師範大學生物科技系碩士班、中國醫學大學學士後中醫系</p>
+            <p><b className="text-slate-900">事蹟：</b>現任劉永豐診所院長</p>
+          </div>
+          <ol className="mt-4 space-y-1.5 text-xs leading-relaxed text-slate-600 list-decimal pl-5">
+            <li>107 年醫療典範獎</li>
+            <li>中華民國 87 年高雄縣第五屆高雄縣榮譽縣民</li>
+            <li>國軍高雄總醫院腸胃科主治醫師</li>
+            <li>三軍總醫院腸胃科主治醫師</li>
+            <li>台灣消化系醫學會基層委員</li>
+            <li>高雄市醫師公會慈善醫療召集人</li>
+            <li>社團法人中華民國坤志慈善會第一、二屆理事長；第三、四屆執行長</li>
+            <li>社團法人中華民國基層醫師協會理事</li>
+            <li>國防醫學院南區校友會常務理事</li>
+            <li>財團法人鄭子太極拳發展基金會董事</li>
+            <li>中華民國內科專科醫師</li>
+            <li>台灣消化系內科專科醫師</li>
+            <li>台灣消化系內視鏡專科醫師</li>
+            <li>台灣居家醫療專科醫師</li>
+          </ol>
         </div>
       </div>
     </section>
