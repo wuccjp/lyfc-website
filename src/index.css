@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #115e59;
+  --color-primary-light: #14b8a6;
+  --color-accent: #0f766e;
+  --color-paper: #fdfbf7;
+  --font-sans: "Noto Sans TC", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif TC", serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); color: #1e293b; background: #ffffff; -webkit-font-smoothing: antialiased; }
