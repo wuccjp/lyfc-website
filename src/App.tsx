@@ -197,15 +197,17 @@ function ACP() {
         <div className="mt-4 grid lg:grid-cols-[1.05fr_0.95fr] gap-8">
           <div>
             <h2 className="font-serif text-[28px] sm:text-[36px] leading-tight font-semibold text-slate-900">預立醫療照護諮商 <br/><span className="text-teal-800">ACP</span></h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-600">
-              在意識清醒時，預先表達對未來醫療的選擇。當未來遇到特定臨床條件而無法自主表達時，醫療團隊與家人能依您的意願做出符合本意的決策。
+            <h3 className="mt-6 font-bold text-slate-900">什麼是預立醫療 (ACP)？</h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              「預立醫療」指我們在身體與意識都還清醒且理智的情況下，預先表達對未來醫療處置的選擇及安排，以確保當自己將來若遇到無法自主表達時（例如昏迷、重病末期…等情形），醫療人員和家人可以根據我們事先填寫的內容來做出符合本人意願的醫療決策。
             </p>
 
-            <div className="mt-6 grid sm:grid-cols-3 gap-3">
+            <h3 className="mt-6 font-bold text-slate-900">預立醫療核心概念</h3>
+            <div className="mt-3 grid sm:grid-cols-3 gap-3">
               {[
-                { k: '法律保障', v: '依《病人自主權利法》具法律效力，亞洲首例。' },
-                { k: '自己決定', v: '預先選擇是否接受維持生命治療與人工營養。' },
-                { k: '減少遺憾', v: '避免無效醫療，減輕家人代為抉擇的壓力。' },
+                { k: '法律保障', v: '台灣是亞洲第一個立法保障「預立醫療指示」的國家，依《病人自主權利法》，讓我們在法律保障下事先簽署、自我選擇未來的醫療安排。' },
+                { k: '預先表達意願，自己決定醫療', v: '在身心健康時，預先表明將來若遇到生命末期情況，想接受或拒絕哪些醫療方式（如插管、心肺復甦術、維生系統…等），而非由他人代為決定。' },
+                { k: '避免無效醫療與家人困擾', v: '避免在生命最後承受無效醫療；當無法自我表達意願時，家人可透過事先填寫的內容了解本人意願。' },
               ].map(i=>(
                 <div key={i.k} className="rounded-xl bg-white border border-teal-100 p-4">
                   <div className="text-sm font-bold text-teal-800">{i.k}</div>
@@ -214,38 +216,71 @@ function ACP() {
               ))}
             </div>
 
-            <h3 className="mt-8 font-bold text-slate-900">什麼時候會啟動預立醫療決定(AD)？</h3>
-            <p className="text-xs text-slate-500">須符合以下五項特定臨床條件之一，並經醫療專業評估</p>
-            <div className="mt-3 grid gap-2">
+            <h3 className="mt-6 font-bold text-slate-900">什麼是病人自主權利法？</h3>
+            <div className="mt-3 grid sm:grid-cols-3 gap-3">
               {[
-                ['末期病人','疾病不可逆，醫學證據顯示存活有限(如癌末、重大器官衰竭)'],
-                ['不可逆昏迷','外傷或腦病變經兩位神經專科評估為重度持續昏迷'],
-                ['永久植物人','外傷6個月 / 非外傷3個月以上無改善'],
-                ['極重度失智','CDR≧3 且 FAST≧7，持續意識障礙、無法自理'],
-                ['其他重症','衛福部公告之12類疾病，重症難治、痛苦難忍、無合適解方'],
-              ].map(([t,d])=>(
-                <div key={t} className="flex gap-3 rounded-xl bg-white border border-slate-200 px-4 py-3">
-                  <span className="shrink-0 mt-0.5 w-6 h-6 rounded-full bg-teal-800 text-white flex items-center justify-center text-xs font-bold">•</span>
-                  <div><div className="text-sm font-bold text-slate-900">{t}</div><div className="text-xs text-slate-600 leading-relaxed">{d}</div></div>
+                ['病人自主','病人具有優先知情權益、選擇與決策。'],
+                ['善終保障','依照法律事先表達特定情況下的醫療保障。'],
+                ['病醫和諧','醫療及病人自主間取平衡，醫師協助病人善終有法律保護。'],
+              ].map(([k,v])=>(
+                <div key={k} className="rounded-xl bg-teal-800 text-white p-4">
+                  <div className="text-sm font-bold">{k}</div>
+                  <div className="mt-1 text-xs leading-relaxed text-teal-100">{v}</div>
                 </div>
               ))}
             </div>
+
+            <h3 className="mt-8 font-bold text-slate-900">何時會啟動預立醫療 (AD) 呢？</h3>
+            <p className="text-xs text-slate-500">在五項特定臨床條件下，經醫療專業評估後啟動</p>
+            <div className="mt-3 grid gap-2">
+              <div className="rounded-xl bg-white border border-slate-200 px-4 py-3">
+                <div className="text-sm font-bold text-slate-900">末期病人</div>
+                <div className="text-xs text-slate-600 leading-relaxed">病人處於不可逆的末期，且由醫師診斷及醫學上證據顯示存活時間有限者（例如：癌症、重大器官衰竭…等）。</div>
+              </div>
+              <div className="rounded-xl bg-white border border-slate-200 px-4 py-3">
+                <div className="text-sm font-bold text-slate-900">不可逆的昏迷</div>
+                <div className="text-xs text-slate-600 leading-relaxed">病人因外傷（例如：車禍）或非外傷（例如：腦部缺氧）造成腦部病變，經過兩位神經專科醫師評估後，處於重度持續性昏迷的狀態。</div>
+              </div>
+              <div className="rounded-xl bg-white border border-slate-200 px-4 py-3">
+                <div className="text-sm font-bold text-slate-900">永久性植物人</div>
+                <div className="text-xs text-slate-600 leading-relaxed">因外傷（例如：車禍）導致 6 個月以上仍無改善；因非外傷（例如：腦部缺氧）導致 3 個月以上仍無改善。</div>
+              </div>
+              <div className="rounded-xl bg-white border border-slate-200 px-4 py-3">
+                <div className="text-sm font-bold text-slate-900">極重度失智</div>
+                <div className="text-xs text-slate-600 leading-relaxed">醫師經由臨床失智評估量表（CDR）及功能性評估量表（FAST），診斷失智程度達 3 分以上、功能性評估達 7 分以上，且持續有意識障礙，生活無法自理、學習或工作等情況。</div>
+              </div>
+              <div className="rounded-xl bg-white border border-slate-200 px-4 py-3">
+                <div className="text-sm font-bold text-slate-900">其他重症</div>
+                <div className="text-xs text-slate-600 leading-relaxed">經中央主管機關公告之病人疾病狀況或痛苦難以忍受、疾病無法治癒且依當時醫療水準無其他合適解決方法之情形。目前衛福部所公告的 12 種疾病，請以衛生福利部網站公告為準。</div>
+              </div>
+            </div>
+
+            <h3 className="mt-8 font-bold text-slate-900">什麼是預立醫療諮商？</h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              意願人（想簽署預立醫療的人）、親屬（或其他相關者）與 ACP 諮商團隊進行預立醫療內容了解及溝通的過程，主要討論如果意願人因為重大意外或疾病…等，在特定臨床條件下，想要接受或拒絕的<b>維持生命醫療</b>與<b>人工營養及流體餵養</b>的醫療選擇，同時也能讓家屬了解意願人的想法。
+            </p>
+
+            <h3 className="mt-8 font-bold text-slate-900">參與諮商前，需先思考及準備什麼呢？</h3>
+            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-slate-600">
+              <li className="flex gap-2"><span className="text-teal-700 font-bold">▸</span><span>思考自我生命的價值：對於發生突發事件或疾病時，您的醫療決定是？</span></li>
+              <li className="flex gap-2"><span className="text-teal-700 font-bold">▸</span><span>邀請 1 至 2 位二等親家屬或委任醫療代理人，共同參與預立醫療諮商。</span></li>
+              <li className="flex gap-2"><span className="text-teal-700 font-bold">▸</span><span>需不需要委任醫療代理人：思考看看身邊有什麼人適合擔任呢？</span></li>
+            </ul>
+            <div className="mt-3 rounded-xl border-l-4 border-teal-700 bg-white px-4 py-3 text-xs leading-relaxed text-slate-600">
+              <b className="text-slate-900">委任醫療代理人：</b>意願人指定較為親近信任的親人或朋友，當意願人遇到意識昏迷或無法清楚表達意願時，代理意願人表達醫療意願；若有家庭成員在場參與，可選擇是否要簽署預立醫療決定書。
+            </div>
+            <img
+              src={`${import.meta.env.BASE_URL}acp-family.png`}
+              alt="什麼是二親等親屬圖解"
+              className="mt-3 w-full rounded-xl border border-slate-200"
+              loading="lazy"
+            />
+            <p className="mt-1 text-[11px] text-slate-400">圖片來源：病人自主研究中心（https://parc.tw/event/course/article/266）</p>
           </div>
 
           <div className="space-y-6">
-            <div className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
-              <h3 className="font-bold text-slate-900">諮商流程 3 步驟</h3>
-              <ol className="mt-4 space-y-4">
-                <li className="flex gap-3"><span className="w-8 h-8 rounded-full bg-teal-800 text-white flex items-center justify-center text-sm font-bold shrink-0">1</span><div><div className="font-bold text-sm">預立醫療諮商</div><div className="text-xs text-slate-600 leading-relaxed">與醫師、護理師團隊了解權利、選項、撤回/變更方式與公證需求。諮商 ≠ 完成簽署。</div></div></li>
-                <li className="flex gap-3"><span className="w-8 h-8 rounded-full bg-teal-800 text-white flex items-center justify-center text-sm font-bold shrink-0">2</span><div><div className="font-bold text-sm">簽立預立醫療決定書</div><div className="text-xs text-slate-600 leading-relaxed">可先將空白文件帶回深思，再完成見證人/公證人欄位簽署。</div></div></li>
-                <li className="flex gap-3"><span className="w-8 h-8 rounded-full bg-teal-800 text-white flex items-center justify-center text-sm font-bold shrink-0">3</span><div><div className="font-bold text-sm">健保卡註記與上傳</div><div className="text-xs text-slate-600 leading-relaxed">攜健保卡與正本/掃描檔回院所，辦理註記並上傳衛福部資料庫。</div></div></li>
-              </ol>
-              <a href="#access" className="mt-5 block text-center rounded-xl bg-teal-800 py-3 text-sm font-bold text-white">預約諮商時段</a>
-              <p className="mt-2 text-center text-[11px] text-slate-500">諮商前請思考生命價值觀、是否委任醫療代理人，並邀請1-2位二等親家屬陪同</p>
-            </div>
-
             <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
-              <h3 className="font-bold text-amber-900">收費方式</h3>
+              <h3 className="font-bold text-amber-900">預立醫療諮商服務如何收費？</h3>
               <div className="mt-4 grid gap-3">
                 {fees.map(f=>(
                   <div key={f.title} className="rounded-xl bg-white border border-amber-100 px-4 py-3 flex items-baseline justify-between gap-4">
@@ -256,16 +291,45 @@ function ACP() {
               </div>
             </div>
 
+            <div className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
+              <h3 className="font-bold text-slate-900">預立醫療啟動三步驟</h3>
+              <ol className="mt-4 space-y-4">
+                <li className="flex gap-3"><span className="w-8 h-8 rounded-full bg-teal-800 text-white flex items-center justify-center text-sm font-bold shrink-0">1</span><div><div className="font-bold text-sm">步驟一：預立醫療諮商</div><div className="text-xs text-slate-600 leading-relaxed">至可簽署預立醫療之院所完成諮商，了解自己有哪些知情選擇及決定權、「維持生命治療、人工營養及流體餵養」之符合條件、預立醫療的更改與撤回流程、若無親友需公證人時該如何簽署等。<br/>提醒：預立醫療諮商，並「非完成」預立醫療決定書！</div></div></li>
+                <li className="flex gap-3"><span className="w-8 h-8 rounded-full bg-teal-800 text-white flex items-center justify-center text-sm font-bold shrink-0">2</span><div><div className="font-bold text-sm">步驟二：簽立預立醫療決定書</div><div className="text-xs text-slate-600 leading-relaxed">若諮商當下還無法清楚決定是否簽署，可以先將空白紙本帶回家，深思熟慮後再填寫，但必須完成見證人或公證人欄位資料。</div></div></li>
+                <li className="flex gap-3"><span className="w-8 h-8 rounded-full bg-teal-800 text-white flex items-center justify-center text-sm font-bold shrink-0">3</span><div><div className="font-bold text-sm">步驟三：攜帶健保卡及紙本至院所註記</div><div className="text-xs text-slate-600 leading-relaxed">將「健保卡」及「預立醫療決定書」帶回醫療院所，人員會協助申請健保卡預立醫療註記，並上傳資料至衛生福利部資料庫。<br/>提醒：預立醫療決定書「掃描檔案」與「正本」的法律效益相同！</div></div></li>
+              </ol>
+              <a href="tel:077492636" className="mt-5 block text-center rounded-xl bg-teal-800 py-3 text-sm font-bold text-white">預約諮商時段：(07) 749-2636</a>
+            </div>
+
             <div className="rounded-2xl bg-white border border-slate-200 p-6">
-              <h3 className="font-bold text-slate-900 text-sm">誰要參與、怎麼簽才有效？</h3>
+              <h3 className="font-bold text-slate-900 text-sm">簽署預立醫療 — 參與者</h3>
               <ul className="mt-3 space-y-2 text-xs leading-relaxed text-slate-600 list-disc pl-5">
-                <li>意願人本人、醫療團隊(醫師/護理師)、至少一位二等親見證人；可指定醫療委任代理人。</li>
-                <li>見證人須年滿18歲具完全行為能力，無須了解內容、非擔保人。</li>
-                <li>若無法有兩位見證人，可經法院或民間公證人公證後簽立。</li>
+                <li>意願人本人、醫療服務提供者（醫師、護理人員）、見證人（至少要一位二等親內親屬）、醫療委任代理人（若有指定）或其他親友等。</li>
+                <li>若沒有兩位「見證人」共同參與簽立預立醫療決定書，但有較信任的朋友或同居者，且對方願意成為意願者之擔保人，也可至法院或民間私人公證人處公證及簽立醫療決定書。</li>
               </ul>
+              <div className="mt-3 rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-xs leading-relaxed text-slate-600">
+                <b className="text-slate-900">見證人：</b>年齡滿 18 歲以上具完全行為能力的家屬、親友或其他人，見證人不須了解預立醫療之項目內容，並不是幫助他人做擔保。
+              </div>
               <div className="mt-4 flex flex-wrap gap-2 text-xs">
                 <a href="https://www.judicial.gov.tw/tw/lp-152-1.html" target="_blank" className="rounded-full border border-slate-200 px-3 py-1.5 hover:bg-slate-50">民間公證人一覽 →</a>
                 <a href="https://www.judicial.gov.tw/tw/cp-50-16-82d30-1.html" target="_blank" className="rounded-full border border-slate-200 px-3 py-1.5 hover:bg-slate-50">地方法院一覽 →</a>
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-white border border-slate-200 p-6">
+              <h3 className="font-bold text-slate-900 text-sm">如何查詢預立醫療註記呢？</h3>
+              <ul className="mt-3 space-y-2 text-xs leading-relaxed text-slate-600 list-disc pl-5">
+                <li>可於家中電腦使用健保卡（搭配讀卡機）至衛生福利部「預立醫療決定、安寧緩和醫療及器官捐贈意願資訊系統」網站首頁查詢。</li>
+                <li>至各醫學中心、區域醫院、地區醫院掛號櫃台或自動服務機臺查詢。</li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-teal-200 bg-white p-6">
+              <h3 className="font-bold text-slate-900 text-sm">相關連結（文件下載）</h3>
+              <div className="mt-3 grid gap-2 text-xs">
+                <a href={`${import.meta.env.BASE_URL}acp-cdr.pdf`} target="_blank" className="flex items-center justify-between rounded-xl border border-slate-200 px-4 py-3 hover:bg-slate-50"><span className="font-medium text-slate-800">臨床失智評估量表〈CDR〉-空白</span><span className="text-teal-700 font-bold">PDF ↓</span></a>
+                <a href={`${import.meta.env.BASE_URL}acp-mohw12.pdf`} target="_blank" className="flex items-center justify-between rounded-xl border border-slate-200 px-4 py-3 hover:bg-slate-50"><span className="font-medium text-slate-800">衛福部公告第12類疾病・擴大適用病主法之臨床條件及附件（2021.04.13）</span><span className="text-teal-700 font-bold">PDF ↓</span></a>
+                <a href={`${import.meta.env.BASE_URL}acp-guide.pdf`} target="_blank" className="flex items-center justify-between rounded-xl border border-slate-200 px-4 py-3 hover:bg-slate-50"><span className="font-medium text-slate-800">2021預立醫療照護諮商說明工具＿意願人版（安寧照顧基金會）</span><span className="text-teal-700 font-bold">PDF ↓</span></a>
               </div>
             </div>
           </div>
