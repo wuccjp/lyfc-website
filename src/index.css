@@ -10,4 +10,5 @@
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: var(--font-sans); color: #1e293b; background: #ffffff; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-sans); font-size: 17px; color: #1e293b; background: #ffffff; -webkit-font-smoothing: antialiased; }
+h3 { font-size: 19px; line-height: 1.65; }
