@@ -378,7 +378,25 @@ function Doctor() {
         </div>
       </div>
 
-      <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-6 sm:p-7">
+      <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 sm:p-7">
+        <div className="flex items-center gap-2">
+          <span className="text-xl">🎬</span>
+          <h3 className="font-bold text-slate-900">媒體報導：醫者仁心 — 劉永豐假日投身慈善</h3>
+        </div>
+        <div className="mt-4 overflow-hidden rounded-xl border border-slate-200 aspect-video bg-slate-900">
+          <iframe
+            title="20160919 醫者仁心 劉永豐假日投身慈善"
+            src="https://www.youtube.com/embed/J7NZzl_mRmI"
+            className="w-full h-full"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+      </div>
+
+      <div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-6 sm:p-7">
         <div className="flex items-center gap-2">
           <span className="text-xl">🏅</span>
           <h3 className="font-bold text-amber-900">劉永豐醫師榮獲 2018 年度【台灣醫療典範獎】</h3>
