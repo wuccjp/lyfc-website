@@ -91,8 +91,8 @@ function Hero() {
           <div className="relative">
             <div className="rounded-[24px] overflow-hidden bg-slate-100 aspect-[4/3] sm:aspect-[1.15/1] shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=900&q=80&auto=format&fit=crop"
-                alt="診所環境示意"
+                src={`${import.meta.env.BASE_URL}clinic-front.jpg`}
+                alt="劉永豐診所外觀 — 高雄市苓雅區建國一路15-1號"
                 className="w-full h-full object-cover"
                 loading="eager"
               />
@@ -100,7 +100,7 @@ function Hero() {
                 <div className="text-xs font-bold tracking-widest text-teal-700">CLINIC HOURS</div>
                 <div className="mt-1 flex flex-wrap gap-2 text-sm">
                   <span className="rounded-full bg-slate-900 text-white px-3 py-1 text-xs font-bold">門診時間</span>
-                  <span className="text-slate-700 font-medium">依現場公告為準 · 建議來電確認</span>
+                  <span className="text-slate-700 font-medium">週一至週六上午 · 週一至週五下午</span>
                 </div>
                 <div className="mt-2 text-xs text-slate-500 leading-relaxed">
                   看診前請攜帶健保卡。預立醫療諮商採預約制，約 60 分鐘/次。
@@ -144,20 +144,25 @@ function InfoCards() {
       <div className="mt-8 grid lg:grid-cols-[1.1fr_0.9fr] gap-6">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-7">
           <h3 className="font-bold text-slate-900 flex items-center gap-2"><span className="w-1.5 h-6 rounded-full bg-teal-700"/> 營業時間</h3>
-          <p className="mt-2 text-xs text-slate-500">以下為範例排版，請以診所現場公告為準。出門前建議來電 <a href="tel:077492636" className="font-bold text-teal-700 underline">(07) 749-2636</a> 確認。</p>
+          <p className="mt-2 text-xs text-slate-500">出門前建議來電 <a href="tel:077492636" className="font-bold text-teal-700 underline">(07) 749-2636</a> 確認。</p>
+          <img
+            src={`${import.meta.env.BASE_URL}clinic-hours.jpg`}
+            alt="劉永豐診所營業時間公告"
+            className="mt-4 w-full rounded-xl border border-slate-200"
+            loading="lazy"
+          />
           <div className="mt-4 overflow-hidden rounded-xl border border-slate-200">
             <table className="w-full text-sm">
               <thead className="bg-slate-50 text-slate-600 text-xs">
                 <tr><th className="px-4 py-2.5 text-left font-semibold"></th><th className="px-2 py-2.5 text-center">一</th><th className="px-2 py-2.5 text-center">二</th><th className="px-2 py-2.5 text-center">三</th><th className="px-2 py-2.5 text-center">四</th><th className="px-2 py-2.5 text-center">五</th><th className="px-2 py-2.5 text-center">六</th><th className="px-2 py-2.5 text-center">日</th></tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                <tr><td className="px-4 py-3 font-medium">上午 09:00-12:00</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center text-slate-300">休</td></tr>
-                <tr><td className="px-4 py-3 font-medium">下午 15:00-18:00</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center text-slate-300">休</td><td className="text-center text-slate-300">休</td></tr>
-                <tr><td className="px-4 py-3 font-medium">晚上 18:30-21:00</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center text-slate-300">休</td><td className="text-center text-slate-300">休</td></tr>
+                <tr><td className="px-4 py-3 font-medium">上午 8:00-12:00</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center text-slate-300">休</td></tr>
+                <tr><td className="px-4 py-3 font-medium">下午 15:30-18:30</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center">●</td><td className="text-center text-slate-300">休</td><td className="text-center text-slate-300">休</td></tr>
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-[11px] text-slate-400">● 看診  休診｜實際門診時段請見診所門口公告或來電詢問</p>
+          <p className="mt-3 text-[11px] text-slate-400">● 看診  休診｜週日固定公休；國定假日公休（逢週六僅上午診，依診所公告為主）</p>
         </div>
 
         <div className="rounded-2xl bg-slate-900 text-slate-100 p-6 sm:p-7">
